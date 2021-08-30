@@ -5,6 +5,7 @@ type CallPart struct {
 	Role       string
 	Identifier string
 	Name       string
+	CallID     uint
 }
 
 func (CallPart) TableName() string {

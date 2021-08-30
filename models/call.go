@@ -3,10 +3,11 @@ package models
 import "time"
 
 type Call struct {
-	common
+	Common
 	Type      string
-	Timestamp time.Time
-	Duration  time.Duration
+	Timestamp *time.Time
+	Duration  *time.Duration
+	Parts     []CallPart
 }
 
 func (Call) TableName() string {

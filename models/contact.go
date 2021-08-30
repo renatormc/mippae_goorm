@@ -1,9 +1,11 @@
 package models
 
 type Contact struct {
-	common
-	Name   string
-	Source string
+	Common
+	Name    string
+	Source  string
+	Entries []ContactEntry
+	Tags    []Tag `gorm:"many2many:tag_contact;"`
 }
 
 func (Contact) TableName() string {

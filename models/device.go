@@ -1,9 +1,10 @@
 package models
 
 type Device struct {
-	common
-	Folder string
-	Group  string
+	Common
+	Folder      string
+	Group       string
+	ReadSources []ReadSource
 }
 
 func (Device) TableName() string {

@@ -1,9 +1,10 @@
 package models
 
 type ContactEntry struct {
-	common
-	Category string
-	Value    string
+	Common
+	Category  string
+	Value     string
+	ContactID uint
 }
 
 func (ContactEntry) TableName() string {

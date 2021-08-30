@@ -5,15 +5,18 @@ import (
 )
 
 type Chat struct {
-	common
+	Common
 	Name               string
 	Identifier         string
 	FriendlyIdentifier string
-	StartTime          time.Time
-	LastActivity       time.Time
+	StartTime          *time.Time
+	LastActivity       *time.Time
 	NMessages          int
 	Source             string
 	Avatar             string
+	Participants       []ChatParticipant
+	Messages           []Message
+	Tags               []Tag `gorm:"many2many:tag_chat;"`
 }
 
 func (Chat) TableName() string {

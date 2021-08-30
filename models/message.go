@@ -5,10 +5,11 @@ import (
 )
 
 type Message struct {
-	common
-	Timestamp    time.Time
+	Common
+	Timestamp    *time.Time
 	Body         string
 	DeletedState string
+	ChatID       uint
 }
 
 func (Message) TableName() string {

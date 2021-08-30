@@ -3,7 +3,7 @@ package models
 import "time"
 
 type File struct {
-	common
+	Common
 	Size          int
 	Filename      string
 	OriginalPath  string
@@ -11,9 +11,9 @@ type File struct {
 	ConvertedPath string
 	Extension     string
 	ContentType   string
-	CreationTime  time.Time
-	ModifyTime    time.Time
-	AccessTime    time.Time
+	CreationTime  *time.Time
+	ModifyTime    *time.Time
+	AccessTime    *time.Time
 	Sha256        string
 	Md5           string
 	Type          string

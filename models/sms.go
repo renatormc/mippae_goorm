@@ -3,12 +3,13 @@ package models
 import "time"
 
 type Sms struct {
-	common
-	Body         string
-	Timestamp    time.Time
-	Status       string
-	Folder       string
-	DeletedState string
+	Common
+	Body      string
+	Timestamp *time.Time
+	Status    string
+	Folder    string
+	Parts     []SmsPart
+	Tags      []Tag `gorm:"many2many:tag_sms;"`
 }
 
 func (Sms) TableName() string {

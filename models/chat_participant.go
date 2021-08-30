@@ -1,12 +1,13 @@
 package models
 
 type ChatParticipant struct {
-	common
+	Common
 	Identifier         string
 	FriendlyIdentifier string
 	Name               string
 	Proprietary        bool
 	Avatar             string
+	ChatID             uint
 }
 
 func (ChatParticipant) TableName() string {

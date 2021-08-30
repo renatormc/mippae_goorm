@@ -1,10 +1,11 @@
 package models
 
 type SmsPart struct {
-	common
+	Common
 	Role       string
 	Identifier string
 	Name       string
+	SmsID      uint
 }
 
 func (SmsPart) TableName() string {
