@@ -1,11 +1,12 @@
 package models
 
 type CallPart struct {
-	ID         int
-	Role       string
-	Identifier string
-	Name       string
-	CallID     uint
+	ID           int
+	Role         string
+	Identifier   string
+	Name         string
+	CallID       uint
+	ReadSourceID uint
 }
 
 func (CallPart) TableName() string {

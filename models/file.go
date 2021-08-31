@@ -18,6 +18,9 @@ type File struct {
 	Md5           string
 	Type          string
 	Corrupted     bool
+	MessageID     uint
+	ReadSourceID  uint
+	Tags          []Tag `gorm:"many2many:tag_file;"`
 }
 
 func (File) TableName() string {
