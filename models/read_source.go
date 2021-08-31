@@ -1,7 +1,8 @@
 package models
 
-type ReadSource struct {
+type DataSource struct {
 	Common
+	Identifier    string
 	Folder        string
 	Process       bool
 	DataFile      string
@@ -11,6 +12,6 @@ type ReadSource struct {
 	DeviceID      uint
 }
 
-func (ReadSource) TableName() string {
+func (DataSource) TableName() string {
 	return "read_source"
 }

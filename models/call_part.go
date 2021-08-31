@@ -6,7 +6,7 @@ type CallPart struct {
 	Identifier   string
 	Name         string
 	CallID       uint
-	ReadSourceID uint
+	DataSourceID uint
 }
 
 func (CallPart) TableName() string {

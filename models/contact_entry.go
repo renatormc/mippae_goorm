@@ -5,7 +5,7 @@ type ContactEntry struct {
 	Category     string
 	Value        string
 	ContactID    uint
-	ReadSourceID uint
+	DataSourceID uint
 }
 
 func (ContactEntry) TableName() string {

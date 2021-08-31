@@ -5,7 +5,7 @@ type Contact struct {
 	Name         string
 	Source       string
 	Entries      []ContactEntry
-	ReadSourceID uint
+	DataSourceID uint
 	Tags         []Tag `gorm:"many2many:tag_contact;"`
 }
 

@@ -6,7 +6,7 @@ type SmsPart struct {
 	Identifier   string
 	Name         string
 	SmsID        uint
-	ReadSourceID uint
+	DataSourceID uint
 }
 
 func (SmsPart) TableName() string {

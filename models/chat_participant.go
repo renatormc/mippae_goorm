@@ -7,7 +7,7 @@ type ChatParticipant struct {
 	Name               string
 	Proprietary        bool
 	Avatar             string
-	ReadSourceID       uint
+	DataSourceID       uint
 	ChatID             uint
 }
 

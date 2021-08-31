@@ -6,7 +6,7 @@ type UserAccount struct {
 	Username     string
 	ServiceType  string
 	Password     string
-	ReadSourceID uint
+	DataSourceID uint
 }
 
 func (UserAccount) TableName() string {

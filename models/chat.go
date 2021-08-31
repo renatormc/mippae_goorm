@@ -16,7 +16,7 @@ type Chat struct {
 	Avatar             string
 	Participants       []ChatParticipant
 	Messages           []Message
-	ReadSourceID       uint
+	DataSourceID       uint
 	Tags               []Tag `gorm:"many2many:tag_chat;"`
 }
 

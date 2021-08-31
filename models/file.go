@@ -19,7 +19,7 @@ type File struct {
 	Type          string
 	Corrupted     bool
 	MessageID     uint
-	ReadSourceID  uint
+	DataSourceID  uint
 	Tags          []Tag `gorm:"many2many:tag_file;"`
 }
 

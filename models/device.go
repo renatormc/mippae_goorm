@@ -4,7 +4,7 @@ type Device struct {
 	Common
 	Folder      string
 	Group       string
-	ReadSources []ReadSource
+	DataSources []DataSource
 }
 
 func (Device) TableName() string {

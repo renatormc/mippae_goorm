@@ -8,7 +8,7 @@ type Call struct {
 	Timestamp    *time.Time
 	Duration     *time.Duration
 	Parts        []CallPart
-	ReadSourceID uint
+	DataSourceID uint
 	Tags         []Tag `gorm:"many2many:tag_call;"`
 }
 
