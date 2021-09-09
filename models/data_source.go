@@ -13,5 +13,5 @@ type DataSource struct {
 }
 
 func (DataSource) TableName() string {
-	return "read_source"
+	return "data_source"
 }
