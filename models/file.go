@@ -4,7 +4,7 @@ import "time"
 
 type File struct {
 	Common
-	Size          int
+	Size          int64
 	Filename      string
 	OriginalPath  string
 	ExtractedPath string
