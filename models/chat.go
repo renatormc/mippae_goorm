@@ -14,10 +14,10 @@ type Chat struct {
 	NMessages          int
 	Source             string
 	Avatar             string
-	Participants       []ChatParticipant
+	Participants       []ChatParticipant `gorm:"many2many:chat_participant;"`
 	Messages           []Message
 	DataSourceID       uint
-	Tags               []Tag `gorm:"many2many:tag_chat;"`
+	Tags               []Tag `gorm:"many2many:tag_cha;"`
 }
 
 func (Chat) TableName() string {

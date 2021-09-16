@@ -1,14 +1,14 @@
 package models
 
 type ChatParticipant struct {
-	Common
+	ID                 uint `gorm:"primaryKey"`
 	Identifier         string
 	FriendlyIdentifier string
 	Name               string
 	Proprietary        bool
 	Avatar             string
 	DataSourceID       uint
-	ChatID             uint
+	Chats              []Chat `gorm:"many2many:chat_participant;"`
 }
 
 func (ChatParticipant) TableName() string {
