@@ -15,7 +15,7 @@ type Message struct {
 	FromName               string
 	Color                  string
 	PageRenderized         int
-	Attachments            []File
+	Attachments            []File `gorm:"foreignKey:MessageID"`
 	DataSourceID           uint
 	AnaliseAttachmentTypes string `gorm:"default:''"`
 }
