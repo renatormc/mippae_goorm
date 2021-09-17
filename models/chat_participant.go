@@ -8,9 +8,9 @@ type ChatParticipant struct {
 	Proprietary        bool
 	Avatar             string
 	DataSourceID       uint
-	Chats              []Chat `gorm:"many2many:chat_participant;"`
+	ChatID             uint
 }
 
 func (ChatParticipant) TableName() string {
-	return "participant"
+	return "chat_participant"
 }
