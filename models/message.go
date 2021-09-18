@@ -23,3 +23,10 @@ type Message struct {
 func (Message) TableName() string {
 	return "message"
 }
+
+func (m *Message) SetTimestampAsUnix(unixTime *int64) {
+	if unixTime != nil {
+		aux := time.Unix(*unixTime, 0)
+		m.Timestamp = &aux
+	}
+}
