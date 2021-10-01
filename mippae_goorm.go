@@ -54,6 +54,7 @@ func CloseConn(db *gorm.DB) error {
 
 func Migrate(db *gorm.DB) error {
 	return db.AutoMigrate(
+		&models.Config{},
 		&models.Tag{},
 		&models.Device{},
 		&models.DataSource{},
