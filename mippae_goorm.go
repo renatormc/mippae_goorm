@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/renatormc/mippae_goorm/models"
 	"gorm.io/driver/postgres"
 	"gorm.io/driver/sqlite"
 	"gorm.io/gorm"
@@ -49,4 +50,23 @@ func CloseConn(db *gorm.DB) error {
 	}
 
 	return nil
+}
+
+func Migrate(db *gorm.DB) error {
+	return db.AutoMigrate(
+		&models.Tag{},
+		&models.Device{},
+		&models.DataSource{},
+		&models.Call{},
+		&models.CallPart{},
+		&models.Chat{},
+		&models.ChatParticipant{},
+		&models.Contact{},
+		&models.ContactEntry{},
+		&models.Message{},
+		&models.File{},
+		&models.Sms{},
+		&models.SmsPart{},
+		&models.UserAccount{},
+	)
 }
