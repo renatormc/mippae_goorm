@@ -1,10 +1,13 @@
 package models
 
-import "time"
+import (
+	"database/sql"
+	"time"
+)
 
 type Call struct {
 	Common
-	Type         string
+	Type         sql.NullString
 	Timestamp    *time.Time
 	Duration     *time.Duration
 	Parts        []CallPart

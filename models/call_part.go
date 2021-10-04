@@ -2,9 +2,9 @@ package models
 
 type CallPart struct {
 	ID           int
-	Role         string
-	Identifier   string
-	Name         string
+	Role         string `gorm:"not null"`
+	Identifier   string `gorm:"not null"`
+	Name         string `gorm:"not null"`
 	CallID       uint
 	DataSourceID uint
 }

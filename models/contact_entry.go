@@ -2,8 +2,8 @@ package models
 
 type ContactEntry struct {
 	Common
-	Category     string
-	Value        string
+	Category     string `gorm:"not null"`
+	Value        string `gorm:"not null"`
 	ContactID    uint
 	DataSourceID uint
 }

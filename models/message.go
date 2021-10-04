@@ -1,23 +1,24 @@
 package models
 
 import (
+	"database/sql"
 	"time"
 )
 
 type Message struct {
 	Common
 	Timestamp              *time.Time
-	Body                   string
-	DeletedState           string
+	Body                   string `gorm:"not null"`
+	DeletedState           string `gorm:"not null"`
 	ChatID                 uint
-	FromIdentifier         string
-	FromFriendlyIdentifier string
-	FromName               string
-	Color                  string
-	PageRenderized         int
+	FromIdentifier         string `gorm:"not null"`
+	FromFriendlyIdentifier string `gorm:"not null"`
+	FromName               string `gorm:"not null"`
+	Color                  string `gorm:"not null,default:'#000000'"`
+	PageRenderized         sql.NullInt64
 	Attachments            []File `gorm:"foreignKey:MessageID"`
 	DataSourceID           uint
-	AnaliseAttachmentTypes string `gorm:"default:''"`
+	AnaliseAttachmentTypes string `gorm:"not null,default:''"`
 }
 
 func (Message) TableName() string {

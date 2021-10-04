@@ -1,19 +1,20 @@
 package models
 
 import (
+	"database/sql"
 	"time"
 )
 
 type Chat struct {
 	Common
-	Name               string
-	Identifier         string
-	FriendlyIdentifier string
+	Name               string `gorm:"not null"`
+	Identifier         string `gorm:"not null"`
+	FriendlyIdentifier string `gorm:"not null"`
 	StartTime          *time.Time
 	LastActivity       *time.Time
-	NMessages          int
-	Source             string
-	Avatar             string
+	NMessages          int    `gorm:"not null"`
+	Source             string `gorm:"not null"`
+	Avatar             sql.NullString
 	Participants       []ChatParticipant `gorm:"foreignKey:ChatID"`
 	Messages           []Message
 	DataSourceID       uint
