@@ -7,7 +7,7 @@ import (
 
 type File struct {
 	Common
-	Size          int64
+	Size          sql.NullInt64
 	Filename      string `gorm:"not null"`
 	OriginalPath  sql.NullString
 	ExtractedPath string `gorm:"not null"`
