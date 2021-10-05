@@ -12,7 +12,7 @@ type Chat struct {
 	FriendlyIdentifier string `gorm:"not null"`
 	StartTime          *time.Time
 	LastActivity       *time.Time
-	NMessages          int    `gorm:"not null"`
+	NMessages          int64  `gorm:"not null, default: 0"`
 	Source             string `gorm:"not null"`
 	Avatar             sql.NullString
 	Participants       []ChatParticipant `gorm:"foreignKey:ChatID"`
