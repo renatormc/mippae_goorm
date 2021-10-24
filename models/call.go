@@ -10,10 +10,10 @@ type Call struct {
 	Type         sql.NullString
 	Timestamp    *time.Time
 	Duration     *time.Duration
-	Parts        []CallPart
+	Parts        []CallPart `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 	DataSourceID uint
-	DataSource   DataSource `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
-	Tags         []Tag      `gorm:"many2many:tag_call;"`
+	DataSource   DataSource
+	Tags         []Tag `gorm:"many2many:tag_call;"`
 }
 
 func (Call) TableName() string {

@@ -12,8 +12,8 @@ type Sms struct {
 	Folder       string    `gorm:"not null"`
 	Parts        []SmsPart `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 	DataSourceID uint
-	DataSource   DataSource `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
-	Tags         []Tag      `gorm:"many2many:tag_sms;"`
+	DataSource   DataSource
+	Tags         []Tag `gorm:"many2many:tag_sms;"`
 }
 
 func (Sms) TableName() string {
