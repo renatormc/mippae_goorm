@@ -13,12 +13,10 @@ type Message struct {
 	ChatID                 uint
 	Color                  string `gorm:"not null,default:'#000000'"`
 	PageRenderized         sql.NullInt64
-	Attachments            []File `gorm:"foreignKey:MessageID"`
-	DataSourceID           uint
-	DataSource             DataSource `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
-	AnaliseAttachmentTypes string     `gorm:"not null,default:''"`
+	Attachments            []File `gorm:"foreignKey:MessageID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
+	AnaliseAttachmentTypes string `gorm:"not null,default:''"`
 	FromID                 uint
-	From                   ChatParticipant `gorm:"foreignKey:FromID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
+	From                   ChatParticipant `gorm:"foreignKey:FromID;"`
 }
 
 func (Message) TableName() string {

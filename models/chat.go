@@ -15,8 +15,8 @@ type Chat struct {
 	NMessages          int64  `gorm:"not null, default: 0"`
 	Source             string `gorm:"not null"`
 	Avatar             sql.NullString
-	Participants       []ChatParticipant `gorm:"foreignKey:ChatID"`
-	Messages           []Message
+	Participants       []ChatParticipant `gorm:"foreignKey:ChatID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
+	Messages           []Message         `gorm:"foreignKey:ChatID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 	DataSourceID       uint
 	DataSource         DataSource `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 	Tags               []Tag      `gorm:"many2many:tag_cha;"`

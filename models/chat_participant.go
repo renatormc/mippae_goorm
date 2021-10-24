@@ -9,9 +9,8 @@ type ChatParticipant struct {
 	Name               string `gorm:"not null"`
 	Proprietary        bool   `gorm:"not null"`
 	Avatar             sql.NullString
-	DataSourceID       uint
-	DataSource         DataSource `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 	ChatID             uint
+	Chat               Chat
 }
 
 func (ChatParticipant) TableName() string {
