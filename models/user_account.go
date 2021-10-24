@@ -9,6 +9,7 @@ type UserAccount struct {
 	ServiceType  string `gorm:"not null"`
 	Password     sql.NullString
 	DataSourceID uint
+	DataSource   DataSource `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 }
 
 func (UserAccount) TableName() string {

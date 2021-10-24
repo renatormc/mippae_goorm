@@ -1,6 +1,8 @@
 package models
 
-import "time"
+import (
+	"time"
+)
 
 type Sms struct {
 	Common
@@ -10,7 +12,8 @@ type Sms struct {
 	Folder       string `gorm:"not null"`
 	Parts        []SmsPart
 	DataSourceID uint
-	Tags         []Tag `gorm:"many2many:tag_sms;"`
+	DataSource   DataSource `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
+	Tags         []Tag      `gorm:"many2many:tag_sms;"`
 }
 
 func (Sms) TableName() string {

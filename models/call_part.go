@@ -6,7 +6,9 @@ type CallPart struct {
 	Identifier   string `gorm:"not null"`
 	Name         string `gorm:"not null"`
 	CallID       uint
+	Call         Call `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 	DataSourceID uint
+	DataSource   DataSource `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 }
 
 func (CallPart) TableName() string {

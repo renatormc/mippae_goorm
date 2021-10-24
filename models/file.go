@@ -22,8 +22,10 @@ type File struct {
 	Type          sql.NullString
 	Corrupted     bool `gorm:"not null"`
 	MessageID     sql.NullInt64
+	Message       Message `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 	DataSourceID  uint
-	Tags          []Tag `gorm:"many2many:tag_file;"`
+	DataSource    DataSource `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
+	Tags          []Tag      `gorm:"many2many:tag_file;"`
 }
 
 func (File) TableName() string {

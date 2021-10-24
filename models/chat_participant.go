@@ -10,6 +10,7 @@ type ChatParticipant struct {
 	Proprietary        bool   `gorm:"not null"`
 	Avatar             sql.NullString
 	DataSourceID       uint
+	DataSource         DataSource `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 	ChatID             uint
 }
 

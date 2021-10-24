@@ -6,7 +6,8 @@ type Contact struct {
 	Source       string `gorm:"not null"`
 	Entries      []ContactEntry
 	DataSourceID uint
-	Tags         []Tag `gorm:"many2many:tag_contact;"`
+	DataSource   DataSource `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
+	Tags         []Tag      `gorm:"many2many:tag_contact;"`
 }
 
 func (Contact) TableName() string {

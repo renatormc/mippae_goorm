@@ -10,6 +10,7 @@ type DataSource struct {
 	RegexSpiTools string
 	ChatSource    string
 	DeviceID      uint
+	Device        Device `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 }
 
 func (DataSource) TableName() string {

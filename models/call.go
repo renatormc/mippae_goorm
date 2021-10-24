@@ -12,7 +12,8 @@ type Call struct {
 	Duration     *time.Duration
 	Parts        []CallPart
 	DataSourceID uint
-	Tags         []Tag `gorm:"many2many:tag_call;"`
+	DataSource   DataSource `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
+	Tags         []Tag      `gorm:"many2many:tag_call;"`
 }
 
 func (Call) TableName() string {

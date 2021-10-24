@@ -18,7 +18,8 @@ type Chat struct {
 	Participants       []ChatParticipant `gorm:"foreignKey:ChatID"`
 	Messages           []Message
 	DataSourceID       uint
-	Tags               []Tag `gorm:"many2many:tag_cha;"`
+	DataSource         DataSource `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
+	Tags               []Tag      `gorm:"many2many:tag_cha;"`
 }
 
 func (Chat) TableName() string {
