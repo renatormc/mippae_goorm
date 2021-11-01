@@ -7,19 +7,19 @@ import (
 
 type File struct {
 	Common
-	Size          sql.NullInt64
+	Size          int64
 	Filename      string `gorm:"not null"`
-	OriginalPath  sql.NullString
+	OriginalPath  string
 	ExtractedPath string `gorm:"not null"`
-	ConvertedPath sql.NullString
+	ConvertedPath string
 	Extension     string `gorm:"not null, default: 'file'"`
-	ContentType   sql.NullString
+	ContentType   string
 	CreationTime  *time.Time
 	ModifyTime    *time.Time
 	AccessTime    *time.Time
-	Sha256        sql.NullString
-	Md5           sql.NullString
-	Type          sql.NullString
+	Sha256        string
+	Md5           string
+	Type          string
 	Corrupted     bool `gorm:"not null"`
 	MessageID     sql.NullInt64
 	Message       Message
