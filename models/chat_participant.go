@@ -1,14 +1,12 @@
 package models
 
-import "database/sql"
-
 type ChatParticipant struct {
 	Common
 	Identifier         string `gorm:"not null"`
 	FriendlyIdentifier string `gorm:"not null"`
 	Name               string `gorm:"not null"`
 	Proprietary        bool   `gorm:"not null"`
-	Avatar             sql.NullString
+	Avatar             string
 	ChatID             uint
 	Chat               Chat
 }

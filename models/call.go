@@ -1,13 +1,12 @@
 package models
 
 import (
-	"database/sql"
 	"time"
 )
 
 type Call struct {
 	Common
-	Type         sql.NullString
+	Type         string
 	Timestamp    *time.Time
 	Duration     *time.Duration
 	Parts        []CallPart `gorm:"constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`

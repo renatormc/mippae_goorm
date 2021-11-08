@@ -1,7 +1,6 @@
 package models
 
 import (
-	"database/sql"
 	"time"
 )
 
@@ -14,7 +13,7 @@ type Chat struct {
 	LastActivity       *time.Time
 	NMessages          int64  `gorm:"not null, default: 0"`
 	Source             string `gorm:"not null"`
-	Avatar             sql.NullString
+	Avatar             string
 	Participants       []ChatParticipant `gorm:"foreignKey:ChatID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 	Messages           []Message         `gorm:"foreignKey:ChatID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 	DataSourceID       uint

@@ -1,7 +1,6 @@
 package models
 
 import (
-	"database/sql"
 	"time"
 )
 
@@ -12,7 +11,7 @@ type Message struct {
 	DeletedState           string `gorm:"not null"`
 	ChatID                 uint
 	Color                  string `gorm:"not null,default:'#000000'"`
-	PageRenderized         sql.NullInt64
+	PageRenderized         int64  `gorm:"not null,default:-1"`
 	Attachments            []File `gorm:"foreignKey:MessageID;constraint:OnUpdate:CASCADE,OnDelete:CASCADE;"`
 	AnaliseAttachmentTypes string `gorm:"not null,default:''"`
 	FromID                 uint
